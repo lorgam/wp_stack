@@ -1,0 +1,23 @@
+{
+    "name": "lorgam/wp_stack",
+    "description": "A basic stack for wordpress",
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "plugins/{$name}/": [  "type:wordpress-plugin"],
+            "themes/{$name}/": [  "type:wordpress-theme"]
+        }
+    },
+    "require": {
+        "wpackagist-theme/twentytwentyone": "^1.1"
+    }
+}

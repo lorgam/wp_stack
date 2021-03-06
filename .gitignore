@@ -1,3 +1,10 @@
+# Ignore the wordpress plugins
+/vendor
+/themes
+/plugins
+# !/themes/name
+# !/plugins/name
+
 # Prerequisites
 *.d
 
