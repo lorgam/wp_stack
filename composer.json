@@ -18,6 +18,9 @@
         }
     },
     "require": {
-        "wpackagist-theme/twentytwentyone": "^1.1"
+        "wpackagist-theme/twentytwentyone": "^1.1",
+        "wpackagist-plugin/woocommerce": "^5.0",
+        "wpackagist-plugin/elementor": "^3.1",
+        "wpackagist-theme/astra": "^3.1"
     }
 }
