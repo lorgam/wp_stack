@@ -21,6 +21,7 @@ services:
     volumes:
       - ./plugins:/var/www/html/wp-content/plugins:ro
       - ./themes:/var/www/html/wp-content/themes:ro
+      - wp_uploads:/var/www/html/wp-content/uploads
     ports:
       - 80:80
     restart: always
@@ -38,3 +39,4 @@ services:
 
 volumes:
   db_data:
+  wp_uploads:

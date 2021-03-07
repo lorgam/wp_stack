@@ -1,9 +1,8 @@
 # Ignore the wordpress plugins
 /vendor
-/themes
-/plugins
-# !/themes/name
-# !/plugins/name
+themes/*
+plugins/*
+!plugins/latiendadeljo
 
 # Prerequisites
 *.d
