@@ -21,6 +21,5 @@ if (in_array('elementor/elementor.php', $active_plugins) && in_array('woocommerc
 
 function load_elementor_widget() {
   require_once('classes/class.categories-elementor.php');
-  var_dump(get_terms( 'product_cat'));
 }
 

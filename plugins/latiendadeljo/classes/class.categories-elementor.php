@@ -23,7 +23,23 @@ class Elementor_Categories_Jo_Widget extends \Elementor\Widget_Base {
   }
 
   protected function render() {
-    echo '<div>La tienda del Jo</div>';
+    $categories = get_terms( ['taxonomy' => 'product_cat' ] ); // @TODO: Hide empty on control
+
+    if (!empty($categories)): ?>
+      <div class="jo-categories-main">
+
+      <?php foreach ($categories as $category):
+        $thumbnail = get_term_meta( $category->term_id, 'thumbnail_id', true );
+        $img = wp_get_attachment_url( $thumbnail ); ?>
+
+        <div class="category" style="background-image:url(<?= $img ?>)">
+          <span class="name"><?= $category->name ?></span>
+        </div>
+
+      <?php endforeach; ?>
+      </div>
+
+    <?php endif;
   }
 
 }
