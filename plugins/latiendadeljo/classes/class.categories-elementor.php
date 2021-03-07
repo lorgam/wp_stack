@@ -32,9 +32,11 @@ class Elementor_Categories_Jo_Widget extends \Elementor\Widget_Base {
         $thumbnail = get_term_meta( $category->term_id, 'thumbnail_id', true );
         $img = wp_get_attachment_url( $thumbnail ); ?>
 
-        <div class="category" style="background-image:url(<?= $img ?>)">
+        <a href="<?= get_term_link($category->term_id) ?>" class="cat-link">
+          <div class="category" style="background-image:url(<?= $img ?>)">
+          </div>
           <span class="name"><?= $category->name ?></span>
-        </div>
+        </a>
 
       <?php endforeach; ?>
       </div>
