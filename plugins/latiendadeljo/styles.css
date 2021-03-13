@@ -1,3 +1,4 @@
+/* Categories */
 div.jo-categories-container {
   width: 100%;
   display: flex;
@@ -16,12 +17,8 @@ div.jo-categories-container div.jo-categories-main {
 div.jo-categories-container div.jo-categories-main div.category {
   display: flex;
   align-items: center;
-
-  margin-bottom: 1rem;
-}
-
-div.jo-categories-container div.jo-categories-main div.category a.cat-link {
   text-align: center;
+  margin-bottom: 1rem;
   margin-left: 1rem;
 }
 
@@ -60,5 +57,49 @@ div.jo-categories-container div.jo-categories-main a.cat-link span.name{
 
   div.jo-categories-container div.jo-categories-main a.cat-link span.name{
     font-size: 0.8rem;
+  }
+}
+
+/* Last posts */
+div.jo-last-posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-right: 2rem;
+}
+
+div.jo-last-posts div.content {
+  text-align: center;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+div.jo-last-posts div.content div.img {
+  width: 300px;
+  height: 300px;
+
+  background-position: center;
+  background-size: cover;
+}
+
+div.jo-last-posts div.content span.title {
+  background-color: rgba(68, 101, 84, 0.75);
+  border: 0px;
+  border-radius: 20px;
+  color: white;
+  padding: 0.2rem 1rem;
+
+  font-size: 1.4rem;
+}
+
+@media(max-width: 960px) {
+  div.jo-last-posts div.content div.img {
+    width: 200px;
+    height: 200px;
+  }
+
+  div.jo-last-posts div.content span.title {
+    font-size: 1rem;
   }
 }

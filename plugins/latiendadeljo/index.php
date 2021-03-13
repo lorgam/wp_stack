@@ -16,6 +16,7 @@ if (in_array('elementor/elementor.php', $active_plugins) && in_array('woocommerc
 
 function load_elementor_widget() {
   require_once('classes/class.categories-elementor.php');
+  require_once('classes/class.last-products-elementor.php');
 }
 
 function enqueue_jo_scripts() {
