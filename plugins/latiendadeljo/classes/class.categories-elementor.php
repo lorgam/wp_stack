@@ -26,19 +26,22 @@ class Elementor_Categories_Jo_Widget extends \Elementor\Widget_Base {
     $categories = get_terms( ['taxonomy' => 'product_cat' ] ); // @TODO: Hide empty on control
 
     if (!empty($categories)): ?>
-      <div class="jo-categories-main">
+      <div class="jo-categories-container">
+        <div class="jo-categories-main">
 
-      <?php foreach ($categories as $category):
-        $thumbnail = get_term_meta( $category->term_id, 'thumbnail_id', true );
-        $img = wp_get_attachment_url( $thumbnail ); ?>
+        <?php foreach ($categories as $category):
+          $thumbnail = get_term_meta( $category->term_id, 'thumbnail_id', true );
+          $img = wp_get_attachment_url( $thumbnail ); ?>
 
-        <a href="<?= get_term_link($category->term_id) ?>" class="cat-link">
-          <div class="category" style="background-image:url(<?= $img ?>)">
+          <div class="category">
+            <a href="<?= get_term_link($category->term_id) ?>" class="cat-link">
+              <div class="img" style="background-image:url(<?= $img ?>)"></div>
+              <span class="name"><?= $category->name ?></span>
+            </a>
           </div>
-          <span class="name"><?= $category->name ?></span>
-        </a>
 
-      <?php endforeach; ?>
+        <?php endforeach; ?>
+        </div>
       </div>
 
     <?php endif;
