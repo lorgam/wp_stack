@@ -10,7 +10,6 @@ div.jo-categories-container {
 div.jo-categories-container div.jo-categories-main {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   margin: auto;
 }
 
@@ -45,10 +44,6 @@ div.jo-categories-container div.jo-categories-main a.cat-link span.name{
 }
 
 @media(max-width: 960px) {
-  div.jo-categories-container div.jo-categories-main {
-    flex-wrap: unset;
-  }
-
   div.jo-categories-container div.jo-categories-main div.category a.cat-link div.img {
     width: 100px;
     height: 100px;
@@ -64,9 +59,12 @@ div.jo-categories-container div.jo-categories-main a.cat-link span.name{
 div.jo-last-posts {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-right: 2rem;
+  justify-content: center;
+
+  max-width: 1100px;
+  margin: auto;
+  padding-right: 2rem;
 }
 
 div.jo-last-posts div.content {
