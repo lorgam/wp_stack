@@ -33,29 +33,22 @@ class Elementor_Last_Products_Jo_Widget extends \Elementor\Widget_Base {
     $query = new WP_Query($args);
 
     if ($query->have_posts()): ?>
-      <div class="jo-last-posts">
+      <ul class="jo-last-posts">
         <?php while ($query->have_posts()):
           $query->the_post();
           $product = wc_get_product($query->post->ID);
           $img = $product->get_image_id();
-          $img = ($img ? wp_get_attachment_image_src($img)[0] : wc_placeholder_img_src()); ?>
+          $img = ($img ? wp_get_attachment_image_src($img, [300, 300])[0] : wc_placeholder_img_src()); ?>
 
-          <div class="content">
+          <li class="content">
             <a href="<?= the_permalink() ?>">
-              <div class="img" style="background-image:url(<?= $img ?>)"></div>
-              <span class="title"><?= the_title() ?></span>
+              <img class="img" src="<?= $img ?>" alt="<?= the_title() ?>" />
+              <h3 class="title"><?= the_title() ?></h3>
             </a>
-          </div>
+          </li>
 
-          <?php
-          /*echo the_permalink();
-          echo '<br>';
-          //var_dump($query->post);
-          //var_dump(get_post_custom());
-          echo '<br>';
-          echo '<br>';*/
-        endwhile; ?>
-      </div>
+          <?php endwhile; ?>
+      </ul>
     <?php else:
       echo __('No hay productos', 'latiendadeljo');
     endif;

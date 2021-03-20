@@ -1,5 +1,5 @@
 /* Categories */
-div.jo-categories-container {
+.jo-categories-container {
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -7,13 +7,14 @@ div.jo-categories-container {
   -webkit-overflow-scrolling: touch;
 }
 
-div.jo-categories-container div.jo-categories-main {
+.jo-categories-container .jo-categories-main {
   display: flex;
   flex-direction: row;
   margin: auto;
+  margin-top: 2rem;
 }
 
-div.jo-categories-container div.jo-categories-main div.category {
+.jo-categories-container .jo-categories-main .category {
   display: flex;
   align-items: center;
   text-align: center;
@@ -21,19 +22,20 @@ div.jo-categories-container div.jo-categories-main div.category {
   margin-left: 1rem;
 }
 
-div.jo-categories-container div.jo-categories-main div.category:last-child {
+.jo-categories-container .jo-categories-main .category:last-child {
   margin-right: 1rem;
 }
 
-div.jo-categories-container div.jo-categories-main div.category a.cat-link div.img{
+.jo-categories-container .jo-categories-main .category a.cat-link .img{
   height: 150px;
   width: 150px;
+  margin-bottom: 0.5rem;
 
   background-position: center;
   background-size: cover;
 }
 
-div.jo-categories-container div.jo-categories-main a.cat-link span.name{
+.jo-categories-container .jo-categories-main a.cat-link .name{
   background-color: rgba(68, 101, 84, 0.75);
   border: 0px;
   border-radius: 20px;
@@ -44,32 +46,30 @@ div.jo-categories-container div.jo-categories-main a.cat-link span.name{
 }
 
 /* Last posts */
-div.jo-last-posts {
+.jo-last-posts {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
 
-  max-width: 1100px;
-  margin: auto;
-  padding-right: 2rem;
+  width: 100%;
+  margin: 0;
 }
 
-div.jo-last-posts div.content {
+.jo-last-posts .content {
   text-align: center;
-  margin-left: 2rem;
-  margin-bottom: 2rem;
+  width: calc(25% - 20px);
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
-div.jo-last-posts div.content div.img {
-  width: 300px;
-  height: 300px;
-
-  background-position: center;
-  background-size: cover;
+.jo-last-posts .content .img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
 
-div.jo-last-posts div.content span.title {
+.jo-last-posts .content .title {
   background-color: rgba(68, 101, 84, 0.75);
   border: 0px;
   border-radius: 20px;
@@ -77,15 +77,21 @@ div.jo-last-posts div.content span.title {
   padding: 0.2rem 1rem;
 
   font-size: 1.4rem;
+  display: inline;
 }
 
-@media(max-width: 960px) {
-  div.jo-last-posts div.content div.img {
-    width: 200px;
-    height: 200px;
+@media(max-width: 920px) {
+  .jo-last-posts .content {
+    width: calc(33.3% - 20px);
   }
 
-  div.jo-last-posts div.content span.title {
+  .jo-last-posts .content .title {
     font-size: 1rem;
+  }
+}
+
+@media(max-width: 545px) {
+  .jo-last-posts .content {
+    width: calc(50% - 20px);
   }
 }
