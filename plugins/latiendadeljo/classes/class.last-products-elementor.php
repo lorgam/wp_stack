@@ -27,7 +27,7 @@ class Elementor_Last_Products_Jo_Widget extends \Elementor\Widget_Base {
       'post_type' => 'product',
       'posts_per_page' => 6,
       'order_by' => 'date',
-      'order' => DESC
+      'order' => 'DESC'
     ];
 
     $query = new WP_Query($args);
@@ -36,15 +36,31 @@ class Elementor_Last_Products_Jo_Widget extends \Elementor\Widget_Base {
       <ul class="jo-last-posts">
         <?php while ($query->have_posts()):
           $query->the_post();
-          $product = wc_get_product($query->post->ID);
+          $productId = $query->post->ID;
+          $product = wc_get_product($productId);
+          $productLink = $product->get_permalink();
+          // Images of the product
           $img = $product->get_image_id();
-          $img = ($img ? wp_get_attachment_image_src($img, [300, 300])[0] : wc_placeholder_img_src()); ?>
+          $img = ($img ? wp_get_attachment_image_src($img, [300, 300])[0] : wc_placeholder_img_src());
+          // Add to cart
+          if ($product->is_purchasable()) {
+            // @TODO: Grouped products
+            $addToCartLink = "?add-to-cart=$productId";
+            $addToCartText = __('Añadir al carrito', 'latiendadeljo');
+            $addToCartClass = "jo-add-to-cart";
+          } else {
+            $addToCartLink = $productLink;
+            $addToCartText = __('+ Info', 'latiendadeljo');
+            $addToCartClass = "jo-read-more";
+          }
+?>
 
           <li class="content">
-            <a href="<?= the_permalink() ?>">
+            <a href="<?= $productLink ?>">
               <img class="img" src="<?= $img ?>" alt="<?= the_title() ?>" />
-              <h3 class="title"><?= the_title() ?></h3>
             </a>
+            <h3 class="title"><?= the_title() ?></h3>
+            <a class="<?= $addToCartClass ?>" href="<?= $addToCartLink ?>"><?= $addToCartText ?></a>
           </li>
 
           <?php endwhile; ?>

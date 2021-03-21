@@ -35,7 +35,7 @@
   background-size: cover;
 }
 
-.jo-categories-container .jo-categories-main a.cat-link .name{
+.jo-categories-container .jo-categories-main a.cat-link .name, .jo-last-posts .content .jo-add-to-cart, .jo-last-posts .content .jo-read-more{
   background-color: rgba(68, 101, 84, 0.75);
   border: 0px;
   border-radius: 20px;
@@ -72,14 +72,13 @@
 }
 
 .jo-last-posts .content .title {
-  background-color: rgba(68, 101, 84, 0.75);
-  border: 0px;
-  border-radius: 20px;
-  color: white;
-  padding: 0.2rem 1rem;
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 
-  font-size: 1.4rem;
-  display: inline;
+.jo-last-posts .content .jo-add-to-cart, .jo-last-posts .content .jo-read-more {
+  display: inline-block;
 }
 
 @media(max-width: 920px) {
