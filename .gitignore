@@ -3,6 +3,8 @@
 themes/*
 plugins/*
 !plugins/latiendadeljo
+# Ignore the .env file
+.env
 
 # Prerequisites
 *.d
