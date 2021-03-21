@@ -36,8 +36,9 @@
 }
 
 .jo-categories-container .jo-categories-main a.cat-link .name, .jo-last-posts .content .jo-add-to-cart, .jo-last-posts .content .jo-read-more{
-  background-color: rgba(68, 101, 84, 0.75);
-  border: 0px;
+  background-color: #579686;
+  opacity: 0.75;
+  border: 0px solid #AA6398;
   border-radius: 20px;
   color: white;
   padding: 0.2rem 1rem;
@@ -75,6 +76,11 @@
   text-align: left;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+.jo-last-posts .content .price {
+  display: block;
+  text-align: left;
 }
 
 .jo-last-posts .content .jo-add-to-cart, .jo-last-posts .content .jo-read-more {

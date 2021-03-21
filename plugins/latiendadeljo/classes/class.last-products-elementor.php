@@ -39,6 +39,8 @@ class Elementor_Last_Products_Jo_Widget extends \Elementor\Widget_Base {
           $productId = $query->post->ID;
           $product = wc_get_product($productId);
           $productLink = $product->get_permalink();
+          $price = wc_get_price_to_display($product);
+          $priceDisplay = ($price ? number_format($price, 2, ',', '.') . get_woocommerce_currency_symbol() : '');
           // Images of the product
           $img = $product->get_image_id();
           $img = ($img ? wp_get_attachment_image_src($img, [300, 300])[0] : wc_placeholder_img_src());
@@ -60,6 +62,7 @@ class Elementor_Last_Products_Jo_Widget extends \Elementor\Widget_Base {
               <img class="img" src="<?= $img ?>" alt="<?= the_title() ?>" />
             </a>
             <h3 class="title"><?= the_title() ?></h3>
+            <span class="price"><?= $priceDisplay ?></span>
             <a class="<?= $addToCartClass ?>" href="<?= $addToCartLink ?>"><?= $addToCartText ?></a>
           </li>
 
