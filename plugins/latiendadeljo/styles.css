@@ -29,6 +29,7 @@
 .jo-categories-container .jo-categories-main .category a.cat-link .img{
   height: 150px;
   width: 150px;
+  margin: auto;
   margin-bottom: 0.5rem;
 
   background-position: center;
