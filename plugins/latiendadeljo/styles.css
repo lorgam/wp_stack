@@ -57,3 +57,17 @@
 
   list-style-type: none;
 }
+
+@media(max-width:990px) {
+  .jo-categories-container .jo-categories-main .category a.cat-link .img{
+    height: 125px;
+    width: 125px;
+  }
+}
+
+@media(max-width:545px) {
+  .jo-categories-container .jo-categories-main .category a.cat-link .img{
+    height: 100px;
+    width: 100px;
+  }
+}
